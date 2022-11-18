@@ -1,0 +1,13 @@
+from input import votes_results
+
+my_dict = {'city-hall': 0, 'nature': 0, 'seashore': 0, 'zoom-party': 0}
+
+for date in votes_results:
+    for key in votes_results[date]:
+        my_dict[key] += votes_results[date][key]
+
+for key in my_dict:
+    if my_dict[key] == max(my_dict.values()):
+        print(f"Winner is: {key}")
+
+print(f"There is all scores: {my_dict}")
